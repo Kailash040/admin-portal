@@ -1,0 +1,248 @@
+{
+  "employees": [
+    {
+      "name": "zcfdgdvgfdgf",
+      "description": "raju ji",
+      "id": 1
+    },
+    {
+      "name": "Rahul",
+      "description": "frontend developer",
+      "id": 2
+    },
+    {
+      "name": "Kailash Tanwar",
+      "description": "raju ji",
+      "id": 3
+    },
+    {
+      "name": "AdminGPON",
+      "description": "fg",
+      "dob": "2023-08-18",
+      "id": 4
+    },
+    {
+      "name": "deepu",
+      "description": "popo",
+      "dob": "2023-08-18",
+      "id": 5
+    },
+    {
+      "name": "Rahul",
+      "description": "php",
+      "dob": "2023-11-10",
+      "gender": "Male",
+      "id": 6
+    },
+    {
+      "name": "kamal",
+      "description": "machanical engineering",
+      "dob": "2040-02-24",
+      "gender": "",
+      "selected": [
+        {
+          "label": "Python ",
+          "value": "Python"
+        },
+        {
+          "label": "Javascript ",
+          "value": "Javascript"
+        },
+        {
+          "label": "Nextjs ",
+          "value": "Nextjs"
+        },
+        {
+          "label": "Django ",
+          "value": "Django"
+        },
+        {
+          "label": "Css ",
+          "value": "Css"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "name": "rita",
+      "description": "vita",
+      "dob": "2023-08-11",
+      "gender": "Female",
+      "selected": [
+        {
+          "label": "Nextjs ",
+          "value": "Nextjs"
+        },
+        {
+          "label": "Javascript ",
+          "value": "Javascript"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "name": "kailash tanwar",
+      "description": "machanical engineering",
+      "dob": "2023-08-19",
+      "gender": "Female",
+      "selected": [
+        {
+          "label": "Html",
+          "value": "Html"
+        },
+        {
+          "label": "Css ",
+          "value": "Css"
+        },
+        {
+          "label": "Python ",
+          "value": "Python"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "name": "Kailash Tanwar",
+      "description": "machanical engineering",
+      "dob": "2023-08-18",
+      "gender": "",
+      "selected": [
+        {
+          "label": "Python ",
+          "value": "Python"
+        },
+        {
+          "label": "Javascript ",
+          "value": "Javascript"
+        }
+      ],
+      "address": "45",
+      "id": 10
+    },
+    {
+      "name": "Kailash Tanwar",
+      "description": "fg",
+      "dob": "2023-08-16",
+      "gender": "Male",
+      "selected": [
+        {
+          "label": "Python ",
+          "value": "Python"
+        },
+        {
+          "label": "Css ",
+          "value": "Css"
+        }
+      ],
+      "address": {
+        "houseNo": "",
+        "nearBy": "",
+        "phoneNo": ""
+      },
+      "id": 11
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": "45",
+      "id": 12
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": "1000",
+      "id": 13
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": "2525",
+      "id": 14
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": {},
+      "id": 15
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": {},
+      "id": 16
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": {},
+      "id": 17
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": {},
+      "id": 18
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": {},
+      "id": 19
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": "123456",
+      "id": 20
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": {
+        "houseNo": "",
+        "nearBy": "",
+        "phoneNo": ""
+      },
+      "id": 21
+    },
+    {
+      "name": "",
+      "description": "",
+      "dob": "",
+      "gender": "",
+      "selected": [],
+      "address": {},
+      "id": 22
+    }
+  ]
+}
