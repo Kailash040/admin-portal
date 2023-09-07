@@ -1,26 +1,19 @@
 
 import './App.css';
-import AddRecord from './components/AddRecord';
-import MainSection from './components/MainSection';
-import SideBar from './components/SideBar';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import UpdateRecord from './UpdateRecord';
 function App() {
   return (
     <div >
+      
      <h1 className='text-center'>Admin-Portal</h1>
-     <div className='container'>
-
-     <div className='row'>
-      <div className='col-lg-3 col-sm-12'>
-<SideBar/>
-      </div>
-      <div className='col-lg-9 col-sm-12'>
-<MainSection/>
-<AddRecord/>
-      </div>
-
-     </div>
-     </div>
+     <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<UpdateRecord />} />
+      </Routes>
+    </Router>
     </div>
   );
 }
