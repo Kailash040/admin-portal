@@ -15,13 +15,7 @@ const UpdateRecord = () => {
     selectedImage: null,
     base64Image: null,
     selected: [],
-    options: [{ label: "Html", value: "Html" },
-    { label: "Css ", value: "Css" },
-    { label: "Python ", value: "Python" },
-    { label: "Javascript ", value: "Javascript" },
-
-    { label: "Nextjs ", value: "Nextjs" },      
-    { label: "Django ", value: "Django" }],
+   
   });
   const options = [
     { label: "Html", value: "Html" },
@@ -29,12 +23,12 @@ const UpdateRecord = () => {
     { label: "Python ", value: "Python" },
     { label: "Javascript ", value: "Javascript" },
 
-    { label: "Nextjs ", value: "Nextjs" },      
+    { label: "Nextjs ", value: "Nextjs" },
     { label: "Django ", value: "Django" },
   ];
-//   
+  //
 
-// 
+  //
   const navigate = useNavigate();
   const { id } = useParams();
   useEffect(() => {
@@ -56,7 +50,7 @@ const UpdateRecord = () => {
       .catch((err) => console.log(err));
     //
   };
-  console.log(value)
+  console.log(value);
   return (
     <div>
       <div>
@@ -201,30 +195,6 @@ const UpdateRecord = () => {
               Save
             </button>
           </div>
-        </form>
-        <h2>Edit Resource</h2>
-        <form onSubmit={handleFormSubmit}>
-          <label>
-            name
-            <input
-              type="text"
-              name="field1"
-              value={value.name}
-              onChange={(e) => setValue({ ...value, name: e.target.value })}
-            />
-          </label>
-          <label>
-            description
-            <input
-              type="text"
-              name="field2"
-              value={value.description}
-              onChange={(e) =>
-                setValue({ ...value, description: e.target.value })
-              }
-            />
-          </label>
-          <button type="submit">Update</button>
         </form>
       </div>
     </div>

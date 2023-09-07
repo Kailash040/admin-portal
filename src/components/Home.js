@@ -1,27 +1,20 @@
 // import MainSection from "./components/MainSection";
 // import SideBar from "./components/SideBar";
-import SideBar from "./SideBar";
+// import SideBar from "./SideBar";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { MultiSelect } from "react-multi-select-component";
 import { Link } from "react-router-dom";
 import AddRecord from "./AddRecord";
 const Home = () => {
+  const refresh = () => window.location.reload(true);
+
   const [selectedItem, setSelectedItem] = useState([]);
   const [data, setData] = useState([]);
-  const [id, setId] = useState();
-
-  const [value, setValue] = useState({
-    name: "",
-    description: "",
-  });
 
   const onItemClick = (item) => {
     setSelectedItem(item);
-    
   };
-
- 
 
   useEffect(() => {
     // Fetch data when the component mounts
@@ -46,18 +39,10 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
   // edit
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    axios
-      .put(`http://localhost:3001/employees/${id}`, value)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    //
-  };
-  //
+ 
   return (
     <div>
+   
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-sm-12">
@@ -98,22 +83,15 @@ const Home = () => {
             </div>
           </div>
           <div className="col-lg-9 col-sm-12">
-            {/* <MainSection /> */}
-            {/* <AddRecord /> */}
-            {/* edit modal */}
             <div class="d-flex justify-content-between p-4">
-              <button
-                type="button"
-                class="btn btn-primary"
-              
-              >
-                <Link  style={{color:"white","textDecoration":"none"}} to={`/${selectedItem.id}`}
+              <button type="button" class="btn btn-primary">
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to={`/${selectedItem.id}`}
                 >
-                    Edit {selectedItem.id}
-                
+                  Edit {selectedItem.id}
                 </Link>
               </button>
-
              
               <button
                 type="button"
@@ -154,10 +132,10 @@ const Home = () => {
                         type="button"
                         class="btn btn-secondary"
                         data-bs-dismiss="modal"
+                        onClick={refresh}
                       >
                         Close
                       </button>
-                      {/* <button type="button" class="btn btn-primary">Understood</button> */}
                     </div>
                   </div>
                 </div>
@@ -192,41 +170,10 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Add more item details as needed */}
               </div>
             )}
-            {/* edit operation */}
-            <div>
-              <h2>Edit Resource</h2>
-              <form onSubmit={handleFormSubmit}>
-                <label>
-                  Field 1:
-                  <input
-                    type="text"
-                    name="field1"
-                    value={value.name}
-                    onChange={(e) =>
-                      setValue({ ...value, name: e.target.value })
-                    }
-                  />
-                </label>
-                <label>
-                  Field 2:
-                  <input
-                    type="text"
-                    name="field2"
-                    value={value.description}
-                    onChange={(e) =>
-                      setValue({ ...value, description: e.target.value })
-                    }
-                  />
-                </label>
-                <button type="submit">Update</button>
-              </form>
-            </div>
-            {/*  */}
-            {/* {selectedItem.selected && selectedItem.selected.length > 0 && (
+
+            {selectedItem.selected && selectedItem.selected.length > 0 && (
               <div>
                 <h2>Skills</h2>
                 <ul>
@@ -235,7 +182,7 @@ const Home = () => {
                   ))}
                 </ul>
               </div>
-            )} */}
+            )}
           </div>
         </div>
       </div>
