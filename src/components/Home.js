@@ -153,7 +153,8 @@ const Home = () => {
             {/* edit modal end */}
             {/* */}
             {selectedItem && (
-              <div>
+              <div className="right_section">
+              <div className="right_section_container">
               
                 
                     {
@@ -169,34 +170,41 @@ const Home = () => {
                     }
                     
                  
-                  <div className="">
-                    <h2>Details : {selectedItem.name} </h2>
-                    <h3>Description : {selectedItem.description}</h3>
-                    <h4>Gender : {selectedItem.gender}</h4>
+                  <div className="right_section_item">
+                    <h2>Name : {selectedItem.name} </h2>
+                    <p>Description : {selectedItem.description}</p>
                     <p>
                       {" "}
-                      <b>Date Of Birth : </b>
-                      {selectedItem.dob}
+                      
+                      <p>Date Of Birth : {moment(selectedItem.dob).format("MMM Do YY")}</p>
+                      <p>Gender : {selectedItem.gender}</p>
                     </p>
-                    <p>
-                      <b>Address : </b> :<b>House No : </b>{" "}
-                      {selectedItem.houseNo} <b>Nearby : </b>
-                      {selectedItem.nearBy} <b>PhoneNo : </b>
-                      {selectedItem.phoneNo}{" "}
-                    </p>
+                   
                   </div>
-                
+                  
+              </div>
+              <div className="address_section">
+                <h2>Address :</h2>
+                <div className="address_details">
+                  
+                <p>House No: {selectedItem.houseNo}</p>
+                <p>Nearby: {selectedItem.nearBy}</p>
+                <p>Phone No: {selectedItem.phoneNo}</p>
+                   </div>
+                 </div>
               </div>
             )}
 
             {selectedItem.selected && selectedItem.selected.length > 0 && (
-              <div>
-                <h2>Skills</h2>
-                <ul>
+              <div className="skills_container">
+                <h3>Skills :</h3>
+                <div className="skills_item_cotainer">
+
                   {selectedItem.selected.map((item, index) => (
                     <li key={index}>{item.value}</li>
-                  ))}
-                </ul>
+                    ))}
+                    </div>
+                
               </div>
             )}
          </div>

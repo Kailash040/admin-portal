@@ -65,3 +65,49 @@ p{
       overflow-y: scroll;
       height: 530px; 
     }
+    .right_section_container{
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .right_section_item h2{
+      font-family: monospace;
+
+    }
+    .right_section_item p{
+      font-family: monospace;
+    }
+    .address_section{
+      padding: 10px;
+      background: #f7f6f2;
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      justify-content: space-between;
+      font-family: monospace;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .address_details{
+      display: flex;
+      font-family: monospace;
+      justify-content: space-between;
+    }
+    .skills_container {
+      /* display: flex; */
+      background: #f7f6f2;
+      width: 58%;
+      margin-left: 2rem;
+      border-radius: 10px;
+      padding: 10px;
+      font-family: monospace;
+  
+    }
+    .skills_container ul{
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .skills_item_cotainer{
+      display: flex;
+      justify-content: space-between;
+    }
