@@ -14,6 +14,7 @@ function AddRecord() {
   // const [message, setMessage] = useState('');
 
   const [fileInputKey, setFileInputKey] = useState(Date.now());
+
   const options = [
     { label: "Html", value: "Html" },
     { label: "Css ", value: "Css" },
@@ -49,7 +50,7 @@ function AddRecord() {
       const reader = new FileReader();
 
       reader.onloadend = () => {
-        setSelectedImage(file);
+        // setSelectedImage(file);
         setBase64Image(reader.result); // Base64-encoded image data
       };
 

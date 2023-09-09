@@ -15,7 +15,15 @@ const UpdateRecord = () => {
     selectedImage: null,
     base64Image: null,
     selected: [],
-   
+    options : [
+      { label: "Html", value: "Html" },
+      { label: "Css ", value: "Css" },
+      { label: "Python ", value: "Python" },
+      { label: "Javascript ", value: "Javascript" },
+  
+      { label: "Nextjs ", value: "Nextjs" },
+      { label: "Django ", value: "Django" },
+    ]
   });
   const options = [
     { label: "Html", value: "Html" },
@@ -29,6 +37,23 @@ const UpdateRecord = () => {
   //
 
   //
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        // setSelectedImage(file);
+        // setValue.base64Image(reader.result); // Base64-encoded image data
+        setValue({ ...value, base64Image: reader.result })
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+  // 
+
   const navigate = useNavigate();
   const { id } = useParams();
   useEffect(() => {
@@ -64,12 +89,28 @@ const UpdateRecord = () => {
   console.log(value);
   return (
     <div>
-      <form onSubmit={handleUserDelete}>
+      {/* <form onSubmit={handleUserDelete}>
 <button type="submit" className="btn btn-primary">Delete User</button>
-      </form>
+      </form> */}
       <div>
         <form onSubmit={handleFormSubmit}>
           <div className="container">
+          <div className="position-relative">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+          />
+
+          {value.base64Image && (
+            <img
+              className="rounded-5"
+              src={value.base64Image}
+              alt="Selected"
+              style={{ width: "150px", height: "200px" }}
+            />
+          )}
+        </div>
             <div className="row">
               <div className="col-lg-6 col-sm-12">
                 <div className="mb-3">
@@ -146,7 +187,7 @@ const UpdateRecord = () => {
                   options={options}
                   value={value.selected}
                   onChange={(e) =>
-                    setValue({ ...value, selected: e.target.value })
+                    setValue({ ...value, options: e.target.value })
                   }
                   labelledBy={"Select"}
                   isCreatable={true}
