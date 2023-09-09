@@ -6,6 +6,8 @@ import axios from "axios";
 import { MultiSelect } from "react-multi-select-component";
 import { Link } from "react-router-dom";
 import AddRecord from "./AddRecord";
+import logo from '../images/logo.webp'
+import moment from 'moment';
 const Home = () => {
   const refresh = () => window.location.reload(true);
 
@@ -39,21 +41,15 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
   // edit
- 
+
   return (
     <div>
-   
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3 col-sm-12">
-            <div
-              id=""
-              style={{
-                overflowY: "scroll",
-                height: "480px",
-                cursor: "pointer",
-              }}
-            >
+      <div className="d-flex justify-content-between p-4">
+        
+          <div className="left_section">
+
+          
+           
               {data.map((value, id) => {
                 return (
                   <a
@@ -62,27 +58,40 @@ const Home = () => {
                     onClick={() => onItemClick(value, id)}
                     class="list"
                   >
-                    <div className="d-flex align-items-center py-1">
+                    <div className=" left_item_grid ">
                       {/* Home */}
                       <img
                         src={value.base64Image}
                         alt="img"
                         style={{
-                          width: "40px",
+                          width: "70px",
                           borderRadius: "50%",
-                          height: "40px",
+                          height: "60px",
                         }}
                       />
-                      <span className="text-truncate">
-                        {value.name} {value.description} {value.gender}{" "}
-                      </span>
+                    <div className="left_section_item ">
+                      <div className="left_section_item_name_description">
+
+                       <p>Name : {value.name}</p>
+                       <p>Description : {value.description.slice(0,5)}..</p>
+                       
+                      </div>
+                    </div>
+                      <div className="left_section_item_data_skill">
+                      <p>DOB : {moment(value.dob).format("MMM Do YY")}</p>
+                      <p>Skills : {value.selected
+.length}</p>
+                      </div>
+                     
                     </div>
                   </a>
                 );
               })}
-            </div>
-          </div>
-          <div className="col-lg-9 col-sm-12">
+         
+         </div>
+         <div className="right_section">
+
+         
             <div class="d-flex justify-content-between p-4">
               <button type="button" class="btn btn-primary">
                 <Link
@@ -92,7 +101,7 @@ const Home = () => {
                   Edit {selectedItem.id}
                 </Link>
               </button>
-             
+
               <button
                 type="button"
                 class="btn btn-primary"
@@ -145,15 +154,22 @@ const Home = () => {
             {/* */}
             {selectedItem && (
               <div>
-                <div className="row">
-                  <div className="col-lg-3">
-                    <img
+              
+                
+                    {
+                      selectedItem.base64Image ? <img
                       className=""
-                      style={{ width: "200px", height: "200px" }}
+                      style={{ width: "200px", height: "200px" ,"borderRadius":"50%" }}
                       src={selectedItem.base64Image}
-                    />
-                  </div>
-                  <div className="col-lg-9">
+                    /> :<img
+                    className=""
+                    style={{ width: "200px", height: "200px" ,"borderRadius":"50%" }}
+                    src={logo}
+                  />
+                    }
+                    
+                 
+                  <div className="">
                     <h2>Details : {selectedItem.name} </h2>
                     <h3>Description : {selectedItem.description}</h3>
                     <h4>Gender : {selectedItem.gender}</h4>
@@ -169,7 +185,7 @@ const Home = () => {
                       {selectedItem.phoneNo}{" "}
                     </p>
                   </div>
-                </div>
+                
               </div>
             )}
 
@@ -183,10 +199,10 @@ const Home = () => {
                 </ul>
               </div>
             )}
-          </div>
+         </div>
         </div>
       </div>
-    </div>
+  
   );
 };
 

@@ -184,7 +184,7 @@ function AddRecord() {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-12 col-sm-12">
+          <div className="col-lg-12 col-sm-12 py-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Skills
             </label>
@@ -196,11 +196,11 @@ function AddRecord() {
               isCreatable={true}
             />
           </div>
-          <div className="col-lg-12 col-sm-12 py-2">
+          <div className="col-lg-12 col-sm-12 py-1">
             <label htmlFor="address" className="form-label">
               Address :
             </label>
-            <div className="row">
+            <div className="row ">
               <div className="col-lg-4">
                 <label htmlFor="houseno" className="form-label">
                   House No:
@@ -243,7 +243,7 @@ function AddRecord() {
             </div>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mt-3">
           Save
         </button>
       </form>

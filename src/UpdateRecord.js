@@ -50,9 +50,23 @@ const UpdateRecord = () => {
       .catch((err) => console.log(err));
     //
   };
+  const handleUserDelete = (event) => {
+    event.preventDefault();
+    axios
+      .delete(`http://localhost:3001/employees/${id}`, value)
+      .then((res) => {
+        console.log(res);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+    //
+  };
   console.log(value);
   return (
     <div>
+      <form onSubmit={handleUserDelete}>
+<button type="submit" className="btn btn-primary">Delete User</button>
+      </form>
       <div>
         <form onSubmit={handleFormSubmit}>
           <div className="container">
