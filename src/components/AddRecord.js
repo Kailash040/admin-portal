@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from '../images/logo.webp'
 
 import { MultiSelect } from "react-multi-select-component";
 function AddRecord() {
@@ -107,21 +108,35 @@ function AddRecord() {
       {/* <h2>Create a New User</h2> */}
       <form onSubmit={handleSubmit}>
         <div className="position-relative">
+          <label htmlFor="files">
+
           <input
             type="file"
             accept="image/*"
+            style={{"visibility":"hidden","position":"absolute"}}
+            id="files"
             onChange={handleImageChange}
             key={fileInputKey}
           />
 
-          {base64Image && (
+          {base64Image ? (
             <img
-              className="rounded-5"
+              className=""
+              id="files"
               src={base64Image}
               alt="Selected"
-              style={{ width: "150px", height: "200px" }}
+              style={{ width: "150px", height: "200px" ,borderRadius: "50%" }}
             />
+          ):(
+            <img
+            className=""
+            src={logo}
+            alt="Selected"
+            id="files"
+            style={{ width: "150px", height: "200px" ,borderRadius: "50%" }}
+          />
           )}
+              </label>
         </div>
         <div className="row">
           <div className="col-lg-6 col-sm-12">

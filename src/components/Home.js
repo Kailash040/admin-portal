@@ -73,7 +73,7 @@ const Home = () => {
                       <div className="left_section_item_name_description">
 
                        <p>Name : {value.name}</p>
-                       <p>Description : {value.description.slice(0,5)}..</p>
+                       <p>Description : {value.description}..</p>
                        
                       </div>
                     </div>

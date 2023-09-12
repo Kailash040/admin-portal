@@ -15,15 +15,15 @@ const UpdateRecord = () => {
     selectedImage: null,
     base64Image: null,
     selected: [],
-    options : [
+    options: [
       { label: "Html", value: "Html" },
       { label: "Css ", value: "Css" },
       { label: "Python ", value: "Python" },
       { label: "Javascript ", value: "Javascript" },
-  
+
       { label: "Nextjs ", value: "Nextjs" },
       { label: "Django ", value: "Django" },
-    ]
+    ],
   });
   const options = [
     { label: "Html", value: "Html" },
@@ -46,13 +46,13 @@ const UpdateRecord = () => {
       reader.onloadend = () => {
         // setSelectedImage(file);
         // setValue.base64Image(reader.result); // Base64-encoded image data
-        setValue({ ...value, base64Image: reader.result })
+        setValue({ ...value, base64Image: reader.result });
       };
 
       reader.readAsDataURL(file);
     }
   };
-  // 
+  //
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -88,29 +88,36 @@ const UpdateRecord = () => {
   };
   console.log(value);
   return (
-    <div>
+    <div className="py-1">
       {/* <form onSubmit={handleUserDelete}>
 <button type="submit" className="btn btn-primary">Delete User</button>
       </form> */}
       <div>
         <form onSubmit={handleFormSubmit}>
           <div className="container">
-          <div className="position-relative">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-          />
+            <div className="position-relative">
+              <label htmlFor="files">
 
-          {value.base64Image && (
-            <img
-              className="rounded-5"
-              src={value.base64Image}
-              alt="Selected"
-              style={{ width: "150px", height: "200px" }}
-            />
-          )}
-        </div>
+              
+              <input
+                type="file"
+                accept="image/*"
+                id="files"
+                style={{"visibility":"hidden","position":"absolute"}}
+                onChange={handleImageChange}
+              />
+
+              {value.base64Image && (
+                <img
+                  className=""
+                  src={value.base64Image}
+                  alt="Selected"
+                  id="files"
+                  style={{ width: "150px", height: "200px" ,borderRadius: "50%" }}
+                />
+              )}
+              </label>
+            </div>
             <div className="row">
               <div className="col-lg-6 col-sm-12">
                 <div className="mb-3">
