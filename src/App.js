@@ -7,7 +7,6 @@ function App() {
   return (
     <div >
       
-     {/* <h1 className='text-center'>Admin-Portal</h1> */}
      <Router>
       <Routes>
         <Route path="/" element={<Home />} />
