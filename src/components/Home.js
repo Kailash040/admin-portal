@@ -98,7 +98,7 @@ const Home = () => {
                   style={{ color: "white", textDecoration: "none" }}
                   to={`/${selectedItem.id}`}
                 >
-                  Edit {selectedItem.id}
+                  Edit User {selectedItem.id}
                 </Link>
               </button>
 

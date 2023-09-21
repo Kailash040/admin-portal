@@ -186,11 +186,11 @@ const UpdateRecord = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-12 col-sm-12">
+              <div className="col-lg-12 col-sm-12 d-none">
                 <label htmlFor="exampleInputEmail1" className="form-label">
                   Skills
                 </label>
-                <MultiSelect
+                <MultiSelect 
                   options={options}
                   value={value.selected}
                   onChange={(e) =>
