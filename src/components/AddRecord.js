@@ -76,7 +76,7 @@ function AddRecord() {
       base64Image: base64Image,
     };
 
-    fetch("http://localhost:3001/employees", {
+    fetch("http://localhost:3000/employees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
